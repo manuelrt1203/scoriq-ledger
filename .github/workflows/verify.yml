@@ -1,0 +1,32 @@
+name: Verify
+
+# Vérifie que la chaîne de hachages du journal est intacte et, sur une pull request, que le journal PROLONGE celui
+# de la branche de base (aucune ligne modifiée, supprimée ou réordonnée). Aucun secret, aucun droit d'écriture.
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Chaîne de hachages intacte ?
+        run: python ledger.py ledger.jsonl
+      - name: Le journal prolonge-t-il celui de la base ? (pull request)
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_REF: ${{ github.base_ref }}
+        run: |
+          git show "origin/${BASE_REF}:ledger.jsonl" > /tmp/ledger_base.jsonl
+          python ledger.py ledger.jsonl --base /tmp/ledger_base.jsonl

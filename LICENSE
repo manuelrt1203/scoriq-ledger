@@ -1,0 +1,22 @@
+ScorIQ public ledger — Redistribution licence (unaltered copies)
+
+Copyright (c) 2026 manuelrt1203. All rights reserved, except as granted below.
+
+You may copy, store and redistribute, free of charge, the files `ledger.jsonl` and `ledger.py` of this repository,
+provided that:
+  1. they are reproduced UNALTERED (byte for byte), together with this notice;
+  2. the purpose is the independent verification of the integrity and the history of the ScorIQ predictions
+     (for example keeping a dated copy, mirroring, auditing, journalism, research on the ledger itself).
+
+No other right is granted. In particular you may not modify `ledger.jsonl`, present a modified copy as the ScorIQ
+ledger, or use the predictions to train machine-learning models without written permission.
+
+Match results and team names come from third-party providers and remain subject to their owners' own terms.
+
+The files are provided "as is", without warranty of any kind. The predictions are not betting or financial advice.
+To the maximum extent permitted by law, the copyright holder is not liable for any claim or damage arising from
+their use.
+
+--- Résumé en français (non contractuel) ---
+Vous pouvez recopier et redistribuer `ledger.jsonl` et `ledger.py` SANS modification, avec cet avis, pour vérifier
+l'historique des prédictions. Aucun autre droit n'est accordé. Les données de tiers restent soumises à leurs conditions.
